@@ -1,0 +1,22 @@
+Solution Structure
+Abstract Base Class (Entity):
+
+An abstract base class that defines common attributes (id, name, description).
+Contains abstract methods that each subclass must implement.
+Specialized Subclasses:
+
+Four subclasses (Book, Movie, Gadget, and Vehicle) represent different types of entities with their unique properties and methods.
+Each subclass:
+Implements specific behavior, including unique attributes and methods.
+Overrides common methods where necessary to reflect specific behavior.
+Polymorphic Processing:
+
+A method accepts Entity objects in a unified way, demonstrating polymorphism.
+The method processes each entity in a polymorphic manner, enabling dynamic behavior based on the entity type.
+Additional Complexity:
+
+Each subclass includes additional complexity, such as:
+Gadget checks warranty status based on purchase date.
+Vehicle calculates fuel range.
+Book checks for overdue status based on loan duration.
+Movie recommends similar movies based on genre and rating.
