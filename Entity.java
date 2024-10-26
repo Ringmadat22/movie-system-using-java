@@ -48,6 +48,82 @@ class Book extends Entity {
     }
 }
 
+
+class Appliance extends Entity {
+    private int powerRating; // in watts
+    private String energyClass;
+
+    public Appliance(int id, String name, String description, int powerRating, String energyClass) {
+        super(id, name, description);
+        this.powerRating = powerRating;
+        this.energyClass = energyClass;
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println("Appliance [ID: " + id + ", Name: " + name + ", Power: " + powerRating + "W, Energy Class: " + energyClass + "]");
+    }
+
+    @Override
+    public void uniqueOperation() {
+        System.out.println("Using the appliance: " + name + " with power rating of " + powerRating + "W.");
+    }
+
+    public void checkEnergyEfficiency() {
+        System.out.println("Energy efficiency class is " + energyClass + ".");
+    }
+}
+
+class Furniture extends Entity {
+    private String material;
+    private String dimensions; // example format: "2x1x1 meters"
+
+    public Furniture(int id, String name, String description, String material, String dimensions) {
+        super(id, name, description);
+        this.material = material;
+        this.dimensions = dimensions;
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println("Furniture [ID: " + id + ", Name: " + name + ", Material: " + material + ", Dimensions: " + dimensions + "]");
+    }
+
+    @Override
+    public void uniqueOperation() {
+        System.out.println("Placing furniture: " + name + " made of " + material + ".");
+    }
+
+    public void checkIfFits(String roomSize) {
+        System.out.println("Checking if dimensions " + dimensions + " fit in room size " + roomSize + ".");
+    }
+}
+
+class Clothing extends Entity {
+    private String fabricType;
+    private String size;
+
+    public Clothing(int id, String name, String description, String fabricType, String size) {
+        super(id, name, description);
+        this.fabricType = fabricType;
+        this.size = size;
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println("Clothing [ID: " + id + ", Name: " + name + ", Fabric: " + fabricType + ", Size: " + size + "]");
+    }
+
+    @Override
+    public void uniqueOperation() {
+        System.out.println("Wearing the clothing item: " + name + " in size " + size + ".");
+    }
+
+    public void checkFabricCareInstructions() {
+        System.out.println("Care instructions for " + fabricType + " fabric.");
+    }
+}
+
 class Movie extends Entity {
     private String director;
     private int duration; // in minutes
